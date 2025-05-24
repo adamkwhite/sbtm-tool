@@ -1,0 +1,1400 @@
+NiceGUI ready to go on http://localhost:8081, and http://172.27.117.2:8081
+2025-05-24 15:19:08,918 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-05-24 15:19:08,918 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_charters")
+2025-05-24 15:19:08,918 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,919 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_testers")
+2025-05-24 15:19:08,919 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,919 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_products")
+2025-05-24 15:19:08,919 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,920 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_environments")
+2025-05-24 15:19:08,920 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,920 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_sessions")
+2025-05-24 15:19:08,920 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,920 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_documents")
+2025-05-24 15:19:08,920 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,920 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_tags")
+2025-05-24 15:19:08,920 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_documents")
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_tags")
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tester_tags")
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("product_tags")
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,921 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_documents")
+2025-05-24 15:19:08,922 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,922 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_tags")
+2025-05-24 15:19:08,922 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,922 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("document_tags")
+2025-05-24 15:19:08,922 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,922 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("projects")
+2025-05-24 15:19:08,922 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("sessions")
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_templates")
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charters")
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_templates")
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("testers")
+2025-05-24 15:19:08,923 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,924 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("products")
+2025-05-24 15:19:08,924 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,924 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("test_environments")
+2025-05-24 15:19:08,924 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,924 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tags")
+2025-05-24 15:19:08,924 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,924 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("documents")
+2025-05-24 15:19:08,924 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:19:08,925 INFO sqlalchemy.engine.Engine COMMIT
+Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2522, in get_property
+    return self._props[key]
+KeyError: 'documents'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/background_tasks.py", line 52, in _handle_task_result
+    task.result()
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/client.py", line 290, in result_with_client
+    await result
+  File "/home/adam/Code/sbtm-tool/main.py", line 13, in startup
+    await init_db()
+  File "/home/adam/Code/sbtm-tool/database/models.py", line 265, in init_db
+    if not session.query(Project).first():
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2955, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/sql/coercions.py", line 388, in expect
+    insp._post_inspect
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/interfaces.py", line 589, in init
+    self.do_init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1661, in do_init
+    self._generate_backref()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+local variable 'save_session' referenced before assignment
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
+  |     yield
+  |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 193, in __call__
+  |     response_sent.set()
+  |   File "/home/adam/.local/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 685, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 193, in __call__
+    |     response_sent.set()
+    |   File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    |     self.gen.throw(type, value, traceback)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/nicegui/middlewares.py", line 10, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    |     await responder(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    |     await self.app(scope, receive, self.send_with_gzip)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 758, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 778, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 299, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 79, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 74, in app
+    |     response = await func(request)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 299, in app
+    |     raise e
+    |   File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 294, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/nicegui/page.py", line 104, in decorated
+    |     result = func(*dec_args, **dec_kwargs)
+    |   File "/home/adam/Code/sbtm-tool/main.py", line 20, in index
+    |     create_main_layout()
+    |   File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 56, in create_main_layout
+    |     switch_view('sessions')
+    |   File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 41, in switch_view
+    |     create_session_view()
+    |   File "/home/adam/Code/sbtm-tool/views/session_view.py", line 95, in create_session_view
+    |     ui.button('Save Session', on_click=save_session).props('color=primary')
+    | UnboundLocalError: local variable 'save_session' referenced before assignment
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response_sent.set()
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/middlewares.py", line 10, in dispatch
+    response = await call_next(request)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    await responder(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    await self.app(scope, receive, self.send_with_gzip)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 74, in app
+    response = await func(request)
+  File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 299, in app
+    raise e
+  File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 294, in app
+    raw_response = await run_endpoint_function(
+  File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/page.py", line 104, in decorated
+    result = func(*dec_args, **dec_kwargs)
+  File "/home/adam/Code/sbtm-tool/main.py", line 20, in index
+    create_main_layout()
+  File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 56, in create_main_layout
+    switch_view('sessions')
+  File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 41, in switch_view
+    create_session_view()
+  File "/home/adam/Code/sbtm-tool/views/session_view.py", line 95, in create_session_view
+    ui.button('Save Session', on_click=save_session).props('color=primary')
+UnboundLocalError: local variable 'save_session' referenced before assignment
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
+  |     yield
+  |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 193, in __call__
+  |     response_sent.set()
+  |   File "/home/adam/.local/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 685, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/adam/.local/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    |     result = await app(  # type: ignore[func-returns-value]
+    |   File "/home/adam/.local/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    |     return await self.app(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/applications.py", line 123, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    |     raise exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 193, in __call__
+    |     response_sent.set()
+    |   File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    |     self.gen.throw(type, value, traceback)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    |     raise exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/nicegui/middlewares.py", line 10, in dispatch
+    |     response = await call_next(request)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    |     await responder(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    |     await self.app(scope, receive, self.send_with_gzip)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 758, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 778, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 299, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 79, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 74, in app
+    |     response = await func(request)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 299, in app
+    |     raise e
+    |   File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 294, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |   File "/home/adam/.local/lib/python3.8/site-packages/nicegui/page.py", line 104, in decorated
+    |     result = func(*dec_args, **dec_kwargs)
+    |   File "/home/adam/Code/sbtm-tool/main.py", line 20, in index
+    |     create_main_layout()
+    |   File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 56, in create_main_layout
+    |     switch_view('sessions')
+    |   File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 41, in switch_view
+    |     create_session_view()
+    |   File "/home/adam/Code/sbtm-tool/views/session_view.py", line 95, in create_session_view
+    |     ui.button('Save Session', on_click=save_session).props('color=primary')
+    | UnboundLocalError: local variable 'save_session' referenced before assignment
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/adam/.local/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response_sent.set()
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/middlewares.py", line 10, in dispatch
+    response = await call_next(request)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/gzip.py", line 24, in __call__
+    await responder(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/gzip.py", line 44, in __call__
+    await self.app(scope, receive, self.send_with_gzip)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adam/.local/lib/python3.8/site-packages/starlette/routing.py", line 74, in app
+    response = await func(request)
+  File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 299, in app
+    raise e
+  File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 294, in app
+    raw_response = await run_endpoint_function(
+  File "/home/adam/.local/lib/python3.8/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/page.py", line 104, in decorated
+    result = func(*dec_args, **dec_kwargs)
+  File "/home/adam/Code/sbtm-tool/main.py", line 20, in index
+    create_main_layout()
+  File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 56, in create_main_layout
+    switch_view('sessions')
+  File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 41, in switch_view
+    create_session_view()
+  File "/home/adam/Code/sbtm-tool/views/session_view.py", line 95, in create_session_view
+    ui.button('Save Session', on_click=save_session).props('color=primary')
+UnboundLocalError: local variable 'save_session' referenced before assignment
+WARNING:  WatchFiles detected changes in 'views/session_view.py'. Reloading...
+NiceGUI ready to go on http://localhost:8081, and http://172.27.117.2:8081
+2025-05-24 15:20:15,557 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-05-24 15:20:15,557 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_charters")
+2025-05-24 15:20:15,557 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,558 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_testers")
+2025-05-24 15:20:15,558 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,558 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_products")
+2025-05-24 15:20:15,558 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,558 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_environments")
+2025-05-24 15:20:15,558 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_sessions")
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_documents")
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_tags")
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_documents")
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_tags")
+2025-05-24 15:20:15,559 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tester_tags")
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("product_tags")
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_documents")
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_tags")
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("document_tags")
+2025-05-24 15:20:15,560 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("projects")
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("sessions")
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_templates")
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charters")
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_templates")
+2025-05-24 15:20:15,561 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("testers")
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("products")
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("test_environments")
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tags")
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("documents")
+2025-05-24 15:20:15,562 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:15,563 INFO sqlalchemy.engine.Engine COMMIT
+Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2522, in get_property
+    return self._props[key]
+KeyError: 'documents'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/background_tasks.py", line 52, in _handle_task_result
+    task.result()
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/client.py", line 290, in result_with_client
+    await result
+  File "/home/adam/Code/sbtm-tool/main.py", line 13, in startup
+    await init_db()
+  File "/home/adam/Code/sbtm-tool/database/models.py", line 265, in init_db
+    if not session.query(Project).first():
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2955, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/sql/coercions.py", line 388, in expect
+    insp._post_inspect
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/interfaces.py", line 589, in init
+    self.do_init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1661, in do_init
+    self._generate_backref()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+WARNING:  WatchFiles detected changes in 'views/session_view.py'. Reloading...
+NiceGUI ready to go on http://localhost:8081, and http://172.27.117.2:8081
+2025-05-24 15:20:25,046 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-05-24 15:20:25,047 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_charters")
+2025-05-24 15:20:25,047 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,047 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_testers")
+2025-05-24 15:20:25,048 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,048 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_products")
+2025-05-24 15:20:25,048 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,048 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_environments")
+2025-05-24 15:20:25,048 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,049 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_sessions")
+2025-05-24 15:20:25,049 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,049 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_documents")
+2025-05-24 15:20:25,049 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,049 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_tags")
+2025-05-24 15:20:25,049 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,050 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_documents")
+2025-05-24 15:20:25,050 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,050 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_tags")
+2025-05-24 15:20:25,050 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,050 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tester_tags")
+2025-05-24 15:20:25,050 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,051 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("product_tags")
+2025-05-24 15:20:25,051 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,051 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_documents")
+2025-05-24 15:20:25,051 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,051 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_tags")
+2025-05-24 15:20:25,051 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,052 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("document_tags")
+2025-05-24 15:20:25,052 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,052 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("projects")
+2025-05-24 15:20:25,052 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,052 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("sessions")
+2025-05-24 15:20:25,052 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,053 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_templates")
+2025-05-24 15:20:25,053 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,053 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charters")
+2025-05-24 15:20:25,053 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,053 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_templates")
+2025-05-24 15:20:25,054 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,054 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("testers")
+2025-05-24 15:20:25,054 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,054 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("products")
+2025-05-24 15:20:25,054 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,054 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("test_environments")
+2025-05-24 15:20:25,054 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,055 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tags")
+2025-05-24 15:20:25,055 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,055 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("documents")
+2025-05-24 15:20:25,055 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:25,055 INFO sqlalchemy.engine.Engine COMMIT
+Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2522, in get_property
+    return self._props[key]
+KeyError: 'documents'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/background_tasks.py", line 52, in _handle_task_result
+    task.result()
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/client.py", line 290, in result_with_client
+    await result
+  File "/home/adam/Code/sbtm-tool/main.py", line 13, in startup
+    await init_db()
+  File "/home/adam/Code/sbtm-tool/database/models.py", line 265, in init_db
+    if not session.query(Project).first():
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2955, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/sql/coercions.py", line 388, in expect
+    insp._post_inspect
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/interfaces.py", line 589, in init
+    self.do_init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1661, in do_init
+    self._generate_backref()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+WARNING:  WatchFiles detected changes in 'views/session_view.py'. Reloading...
+NiceGUI ready to go on http://localhost:8081, and http://172.27.117.2:8081
+2025-05-24 15:20:48,624 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-05-24 15:20:48,625 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_charters")
+2025-05-24 15:20:48,625 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,625 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_testers")
+2025-05-24 15:20:48,625 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_products")
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_environments")
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_sessions")
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_documents")
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,626 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_tags")
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_documents")
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_tags")
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tester_tags")
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("product_tags")
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_documents")
+2025-05-24 15:20:48,627 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,628 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_tags")
+2025-05-24 15:20:48,628 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,628 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("document_tags")
+2025-05-24 15:20:48,628 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,628 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("projects")
+2025-05-24 15:20:48,628 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,628 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("sessions")
+2025-05-24 15:20:48,628 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,629 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_templates")
+2025-05-24 15:20:48,629 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,629 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charters")
+2025-05-24 15:20:48,629 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,629 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_templates")
+2025-05-24 15:20:48,629 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,629 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("testers")
+2025-05-24 15:20:48,629 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,630 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("products")
+2025-05-24 15:20:48,630 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,630 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("test_environments")
+2025-05-24 15:20:48,630 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,630 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tags")
+2025-05-24 15:20:48,630 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,630 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("documents")
+2025-05-24 15:20:48,630 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:20:48,631 INFO sqlalchemy.engine.Engine COMMIT
+Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2522, in get_property
+    return self._props[key]
+KeyError: 'documents'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/background_tasks.py", line 52, in _handle_task_result
+    task.result()
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/client.py", line 290, in result_with_client
+    await result
+  File "/home/adam/Code/sbtm-tool/main.py", line 13, in startup
+    await init_db()
+  File "/home/adam/Code/sbtm-tool/database/models.py", line 265, in init_db
+    if not session.query(Project).first():
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2955, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/sql/coercions.py", line 388, in expect
+    insp._post_inspect
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/interfaces.py", line 589, in init
+    self.do_init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1661, in do_init
+    self._generate_backref()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+NiceGUI ready to go on http://localhost:8081, and http://172.27.117.2:8081
+2025-05-24 15:22:16,944 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-05-24 15:22:16,944 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_charters")
+2025-05-24 15:22:16,944 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_testers")
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_products")
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_environments")
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_sessions")
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,945 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_documents")
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_tags")
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_documents")
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_tags")
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tester_tags")
+2025-05-24 15:22:16,946 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("product_tags")
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_documents")
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("environment_tags")
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("document_tags")
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("projects")
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,947 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("sessions")
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("session_templates")
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charters")
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("charter_templates")
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("testers")
+2025-05-24 15:22:16,948 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,949 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("products")
+2025-05-24 15:22:16,949 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,949 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("test_environments")
+2025-05-24 15:22:16,949 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,949 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tags")
+2025-05-24 15:22:16,949 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,949 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("documents")
+2025-05-24 15:22:16,949 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-05-24 15:22:16,950 INFO sqlalchemy.engine.Engine COMMIT
+Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2522, in get_property
+    return self._props[key]
+KeyError: 'documents'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/background_tasks.py", line 52, in _handle_task_result
+    task.result()
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/client.py", line 290, in result_with_client
+    await result
+  File "/home/adam/Code/sbtm-tool/main.py", line 14, in startup
+    await init_db()
+  File "/home/adam/Code/sbtm-tool/database/models.py", line 265, in init_db
+    if not session.query(Project).first():
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2955, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/sql/coercions.py", line 388, in expect
+    insp._post_inspect
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/interfaces.py", line 589, in init
+    self.do_init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1661, in do_init
+    self._generate_backref()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+WARNING:  WatchFiles detected changes in 'database/models.py'. Reloading...
+NiceGUI ready to go on http://localhost:8081, and http://172.27.117.2:8081
+Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2522, in get_property
+    return self._props[key]
+KeyError: 'documents'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/background_tasks.py", line 52, in _handle_task_result
+    task.result()
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/client.py", line 290, in result_with_client
+    await result
+  File "/home/adam/Code/sbtm-tool/main.py", line 14, in startup
+    await init_db()
+  File "/home/adam/Code/sbtm-tool/database/models.py", line 267, in init_db
+    if not session.query(Project).first():
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2955, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 276, in __init__
+    self._set_entities(entities)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 288, in _set_entities
+    self._raw_columns = [
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 289, in <listcomp>
+    coercions.expect(
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/sql/coercions.py", line 388, in expect
+    insp._post_inspect
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/interfaces.py", line 589, in init
+    self.do_init()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1661, in do_init
+    self._generate_backref()
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 2145, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+  File "/home/adam/.local/lib/python3.8/site-packages/sqlalchemy/orm/mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Document(documents)]' has no property 'documents'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Invalid property specified for object of type plotly.graph_objs.Pie: 'colors'
+
+Did you mean "hole"?
+
+    Valid properties:
+        automargin
+            Determines whether outside text labels can push the
+            margins.
+        customdata
+            Assigns extra data each datum. This may be useful when
+            listening to hover, click and selection events. Note
+            that, "scatter" traces also appends customdata items in
+            the markers DOM elements
+        customdatasrc
+            Sets the source reference on Chart Studio Cloud for
+            `customdata`.
+        direction
+            Specifies the direction at which succeeding sectors
+            follow one another.
+        dlabel
+            Sets the label step. See `label0` for more info.
+        domain
+            :class:`plotly.graph_objects.pie.Domain` instance or
+            dict with compatible properties
+        hole
+            Sets the fraction of the radius to cut out of the pie.
+            Use this to make a donut chart.
+        hoverinfo
+            Determines which trace information appear on hover. If
+            `none` or `skip` are set, no information is displayed
+            upon hovering. But, if `none` is set, click and hover
+            events are still fired.
+        hoverinfosrc
+            Sets the source reference on Chart Studio Cloud for
+            `hoverinfo`.
+        hoverlabel
+            :class:`plotly.graph_objects.pie.Hoverlabel` instance
+            or dict with compatible properties
+        hovertemplate
+            Template string used for rendering the information that
+            appear on hover box. Note that this will override
+            `hoverinfo`. Variables are inserted using %{variable},
+            for example "y: %{y}" as well as %{xother}, {%_xother},
+            {%_xother_}, {%xother_}. When showing info for several
+            points, "xother" will be added to those with different
+            x positions from the first point. An underscore before
+            or after "(x|y)other" will add a space on that side,
+            only when this field is shown. Numbers are formatted
+            using d3-format's syntax %{variable:d3-format}, for
+            example "Price: %{y:$.2f}".
+            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
+            for details on the formatting syntax. Dates are
+            formatted using d3-time-format's syntax
+            %{variable|d3-time-format}, for example "Day:
+            %{2019-01-01|%A}". https://github.com/d3/d3-time-
+            format/tree/v2.2.3#locale_format for details on the
+            date formatting syntax. The variables available in
+            `hovertemplate` are the ones emitted as event data
+            described at this link
+            https://plotly.com/javascript/plotlyjs-events/#event-
+            data. Additionally, every attributes that can be
+            specified per-point (the ones that are `arrayOk: true`)
+            are available. Finally, the template string has access
+            to variables `label`, `color`, `value`, `percent` and
+            `text`. Anything contained in tag `<extra>` is
+            displayed in the secondary box, for example
+            "<extra>{fullData.name}</extra>". To hide the secondary
+            box completely, use an empty tag `<extra></extra>`.
+        hovertemplatesrc
+            Sets the source reference on Chart Studio Cloud for
+            `hovertemplate`.
+        hovertext
+            Sets hover text elements associated with each sector.
+            If a single string, the same string appears for all
+            data points. If an array of string, the items are
+            mapped in order of this trace's sectors. To be seen,
+            trace `hoverinfo` must contain a "text" flag.
+        hovertextsrc
+            Sets the source reference on Chart Studio Cloud for
+            `hovertext`.
+        ids
+            Assigns id labels to each datum. These ids for object
+            constancy of data points during animation. Should be an
+            array of strings, not numbers or any other type.
+        idssrc
+            Sets the source reference on Chart Studio Cloud for
+            `ids`.
+        insidetextfont
+            Sets the font used for `textinfo` lying inside the
+            sector.
+        insidetextorientation
+            Controls the orientation of the text inside chart
+            sectors. When set to "auto", text may be oriented in
+            any direction in order to be as big as possible in the
+            middle of a sector. The "horizontal" option orients
+            text to be parallel with the bottom of the chart, and
+            may make text smaller in order to achieve that goal.
+            The "radial" option orients text along the radius of
+            the sector. The "tangential" option orients text
+            perpendicular to the radius of the sector.
+        label0
+            Alternate to `labels`. Builds a numeric set of labels.
+            Use with `dlabel` where `label0` is the starting label
+            and `dlabel` the step.
+        labels
+            Sets the sector labels. If `labels` entries are
+            duplicated, we sum associated `values` or simply count
+            occurrences if `values` is not provided. For other
+            array attributes (including color) we use the first
+            non-empty entry among all occurrences of the label.
+        labelssrc
+            Sets the source reference on Chart Studio Cloud for
+            `labels`.
+        legend
+            Sets the reference to a legend to show this trace in.
+            References to these legends are "legend", "legend2",
+            "legend3", etc. Settings for these legends are set in
+            the layout, under `layout.legend`, `layout.legend2`,
+            etc.
+        legendgroup
+            Sets the legend group for this trace. Traces and shapes
+            part of the same legend group hide/show at the same
+            time when toggling legend items.
+        legendgrouptitle
+            :class:`plotly.graph_objects.pie.Legendgrouptitle`
+            instance or dict with compatible properties
+        legendrank
+            Sets the legend rank for this trace. Items and groups
+            with smaller ranks are presented on top/left side while
+            with "reversed" `legend.traceorder` they are on
+            bottom/right side. The default legendrank is 1000, so
+            that you can use ranks less than 1000 to place certain
+            items before all unranked items, and ranks greater than
+            1000 to go after all unranked items. When having
+            unranked or equal rank items shapes would be displayed
+            after traces i.e. according to their order in data and
+            layout.
+        legendwidth
+            Sets the width (in px or fraction) of the legend for
+            this trace.
+        marker
+            :class:`plotly.graph_objects.pie.Marker` instance or
+            dict with compatible properties
+        meta
+            Assigns extra meta information associated with this
+            trace that can be used in various text attributes.
+            Attributes such as trace `name`, graph, axis and
+            colorbar `title.text`, annotation `text`
+            `rangeselector`, `updatemenues` and `sliders` `label`
+            text all support `meta`. To access the trace `meta`
+            values in an attribute in the same trace, simply use
+            `%{meta[i]}` where `i` is the index or key of the
+            `meta` item in question. To access trace `meta` in
+            layout attributes, use `%{data[n[.meta[i]}` where `i`
+            is the index or key of the `meta` and `n` is the trace
+            index.
+        metasrc
+            Sets the source reference on Chart Studio Cloud for
+            `meta`.
+        name
+            Sets the trace name. The trace name appears as the
+            legend item and on hover.
+        opacity
+            Sets the opacity of the trace.
+        outsidetextfont
+            Sets the font used for `textinfo` lying outside the
+            sector.
+        pull
+            Sets the fraction of larger radius to pull the sectors
+            out from the center. This can be a constant to pull all
+            slices apart from each other equally or an array to
+            highlight one or more slices.
+        pullsrc
+            Sets the source reference on Chart Studio Cloud for
+            `pull`.
+        rotation
+            Instead of the first slice starting at 12 o'clock,
+            rotate to some other angle.
+        scalegroup
+            If there are multiple pie charts that should be sized
+            according to their totals, link them by providing a
+            non-empty group id here shared by every trace in the
+            same group.
+        showlegend
+            Determines whether or not an item corresponding to this
+            trace is shown in the legend.
+        sort
+            Determines whether or not the sectors are reordered
+            from largest to smallest.
+        stream
+            :class:`plotly.graph_objects.pie.Stream` instance or
+            dict with compatible properties
+        text
+            Sets text elements associated with each sector. If
+            trace `textinfo` contains a "text" flag, these elements
+            will be seen on the chart. If trace `hoverinfo`
+            contains a "text" flag and "hovertext" is not set,
+            these elements will be seen in the hover labels.
+        textfont
+            Sets the font used for `textinfo`.
+        textinfo
+            Determines which trace information appear on the graph.
+        textposition
+            Specifies the location of the `textinfo`.
+        textpositionsrc
+            Sets the source reference on Chart Studio Cloud for
+            `textposition`.
+        textsrc
+            Sets the source reference on Chart Studio Cloud for
+            `text`.
+        texttemplate
+            Template string used for rendering the information text
+            that appear on points. Note that this will override
+            `textinfo`. Variables are inserted using %{variable},
+            for example "y: %{y}". Numbers are formatted using
+            d3-format's syntax %{variable:d3-format}, for example
+            "Price: %{y:$.2f}".
+            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
+            for details on the formatting syntax. Dates are
+            formatted using d3-time-format's syntax
+            %{variable|d3-time-format}, for example "Day:
+            %{2019-01-01|%A}". https://github.com/d3/d3-time-
+            format/tree/v2.2.3#locale_format for details on the
+            date formatting syntax. Every attributes that can be
+            specified per-point (the ones that are `arrayOk: true`)
+            are available. Finally, the template string has access
+            to variables `label`, `color`, `value`, `percent` and
+            `text`.
+        texttemplatesrc
+            Sets the source reference on Chart Studio Cloud for
+            `texttemplate`.
+        title
+            :class:`plotly.graph_objects.pie.Title` instance or
+            dict with compatible properties
+        uid
+            Assign an id to this trace, Use this to provide object
+            constancy between traces during animations and
+            transitions.
+        uirevision
+            Controls persistence of some user-driven changes to the
+            trace: `constraintrange` in `parcoords` traces, as well
+            as some `editable: true` modifications such as `name`
+            and `colorbar.title`. Defaults to `layout.uirevision`.
+            Note that other user-driven trace attribute changes are
+            controlled by `layout` attributes: `trace.visible` is
+            controlled by `layout.legend.uirevision`,
+            `selectedpoints` is controlled by
+            `layout.selectionrevision`, and `colorbar.(x|y)`
+            (accessible with `config: {editable: true}`) is
+            controlled by `layout.editrevision`. Trace changes are
+            tracked by `uid`, which only falls back on trace index
+            if no `uid` is provided. So if your app can add/remove
+            traces before the end of the `data` array, such that
+            the same trace has a different index, you can still
+            preserve user-driven changes if you give each trace a
+            `uid` that stays with it as it moves.
+        values
+            Sets the values of the sectors. If omitted, we count
+            occurrences of each label.
+        valuessrc
+            Sets the source reference on Chart Studio Cloud for
+            `values`.
+        visible
+            Determines whether or not this trace is visible. If
+            "legendonly", the trace is not drawn, but can appear as
+            a legend item (provided that the legend itself is
+            visible).
+        
+Did you mean "hole"?
+
+Bad property path:
+colors
+^^^^^^
+Traceback (most recent call last):
+  File "/home/adam/.local/lib/python3.8/site-packages/nicegui/events.py", line 407, in handle_event
+    result = handler(arguments) if expects_arguments else handler()
+  File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 30, in <lambda>
+    ui.button('Statistics', on_click=lambda: switch_view('statistics')).classes('text-white')
+  File "/home/adam/Code/sbtm-tool/views/main_layout.py", line 53, in switch_view
+    create_statistics_view()
+  File "/home/adam/Code/sbtm-tool/views/statistics_view.py", line 92, in create_statistics_view
+    fig_pie = go.Figure(data=[go.Pie(
+  File "/home/adam/.local/lib/python3.8/site-packages/plotly/graph_objs/_pie.py", line 1871, in __init__
+    self._process_kwargs(**dict(arg, **kwargs))
+  File "/home/adam/.local/lib/python3.8/site-packages/plotly/basedatatypes.py", line 4470, in _process_kwargs
+    raise err
+ValueError: Invalid property specified for object of type plotly.graph_objs.Pie: 'colors'
+
+Did you mean "hole"?
+
+    Valid properties:
+        automargin
+            Determines whether outside text labels can push the
+            margins.
+        customdata
+            Assigns extra data each datum. This may be useful when
+            listening to hover, click and selection events. Note
+            that, "scatter" traces also appends customdata items in
+            the markers DOM elements
+        customdatasrc
+            Sets the source reference on Chart Studio Cloud for
+            `customdata`.
+        direction
+            Specifies the direction at which succeeding sectors
+            follow one another.
+        dlabel
+            Sets the label step. See `label0` for more info.
+        domain
+            :class:`plotly.graph_objects.pie.Domain` instance or
+            dict with compatible properties
+        hole
+            Sets the fraction of the radius to cut out of the pie.
+            Use this to make a donut chart.
+        hoverinfo
+            Determines which trace information appear on hover. If
+            `none` or `skip` are set, no information is displayed
+            upon hovering. But, if `none` is set, click and hover
+            events are still fired.
+        hoverinfosrc
+            Sets the source reference on Chart Studio Cloud for
+            `hoverinfo`.
+        hoverlabel
+            :class:`plotly.graph_objects.pie.Hoverlabel` instance
+            or dict with compatible properties
+        hovertemplate
+            Template string used for rendering the information that
+            appear on hover box. Note that this will override
+            `hoverinfo`. Variables are inserted using %{variable},
+            for example "y: %{y}" as well as %{xother}, {%_xother},
+            {%_xother_}, {%xother_}. When showing info for several
+            points, "xother" will be added to those with different
+            x positions from the first point. An underscore before
+            or after "(x|y)other" will add a space on that side,
+            only when this field is shown. Numbers are formatted
+            using d3-format's syntax %{variable:d3-format}, for
+            example "Price: %{y:$.2f}".
+            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
+            for details on the formatting syntax. Dates are
+            formatted using d3-time-format's syntax
+            %{variable|d3-time-format}, for example "Day:
+            %{2019-01-01|%A}". https://github.com/d3/d3-time-
+            format/tree/v2.2.3#locale_format for details on the
+            date formatting syntax. The variables available in
+            `hovertemplate` are the ones emitted as event data
+            described at this link
+            https://plotly.com/javascript/plotlyjs-events/#event-
+            data. Additionally, every attributes that can be
+            specified per-point (the ones that are `arrayOk: true`)
+            are available. Finally, the template string has access
+            to variables `label`, `color`, `value`, `percent` and
+            `text`. Anything contained in tag `<extra>` is
+            displayed in the secondary box, for example
+            "<extra>{fullData.name}</extra>". To hide the secondary
+            box completely, use an empty tag `<extra></extra>`.
+        hovertemplatesrc
+            Sets the source reference on Chart Studio Cloud for
+            `hovertemplate`.
+        hovertext
+            Sets hover text elements associated with each sector.
+            If a single string, the same string appears for all
+            data points. If an array of string, the items are
+            mapped in order of this trace's sectors. To be seen,
+            trace `hoverinfo` must contain a "text" flag.
+        hovertextsrc
+            Sets the source reference on Chart Studio Cloud for
+            `hovertext`.
+        ids
+            Assigns id labels to each datum. These ids for object
+            constancy of data points during animation. Should be an
+            array of strings, not numbers or any other type.
+        idssrc
+            Sets the source reference on Chart Studio Cloud for
+            `ids`.
+        insidetextfont
+            Sets the font used for `textinfo` lying inside the
+            sector.
+        insidetextorientation
+            Controls the orientation of the text inside chart
+            sectors. When set to "auto", text may be oriented in
+            any direction in order to be as big as possible in the
+            middle of a sector. The "horizontal" option orients
+            text to be parallel with the bottom of the chart, and
+            may make text smaller in order to achieve that goal.
+            The "radial" option orients text along the radius of
+            the sector. The "tangential" option orients text
+            perpendicular to the radius of the sector.
+        label0
+            Alternate to `labels`. Builds a numeric set of labels.
+            Use with `dlabel` where `label0` is the starting label
+            and `dlabel` the step.
+        labels
+            Sets the sector labels. If `labels` entries are
+            duplicated, we sum associated `values` or simply count
+            occurrences if `values` is not provided. For other
+            array attributes (including color) we use the first
+            non-empty entry among all occurrences of the label.
+        labelssrc
+            Sets the source reference on Chart Studio Cloud for
+            `labels`.
+        legend
+            Sets the reference to a legend to show this trace in.
+            References to these legends are "legend", "legend2",
+            "legend3", etc. Settings for these legends are set in
+            the layout, under `layout.legend`, `layout.legend2`,
+            etc.
+        legendgroup
+            Sets the legend group for this trace. Traces and shapes
+            part of the same legend group hide/show at the same
+            time when toggling legend items.
+        legendgrouptitle
+            :class:`plotly.graph_objects.pie.Legendgrouptitle`
+            instance or dict with compatible properties
+        legendrank
+            Sets the legend rank for this trace. Items and groups
+            with smaller ranks are presented on top/left side while
+            with "reversed" `legend.traceorder` they are on
+            bottom/right side. The default legendrank is 1000, so
+            that you can use ranks less than 1000 to place certain
+            items before all unranked items, and ranks greater than
+            1000 to go after all unranked items. When having
+            unranked or equal rank items shapes would be displayed
+            after traces i.e. according to their order in data and
+            layout.
+        legendwidth
+            Sets the width (in px or fraction) of the legend for
+            this trace.
+        marker
+            :class:`plotly.graph_objects.pie.Marker` instance or
+            dict with compatible properties
+        meta
+            Assigns extra meta information associated with this
+            trace that can be used in various text attributes.
+            Attributes such as trace `name`, graph, axis and
+            colorbar `title.text`, annotation `text`
+            `rangeselector`, `updatemenues` and `sliders` `label`
+            text all support `meta`. To access the trace `meta`
+            values in an attribute in the same trace, simply use
+            `%{meta[i]}` where `i` is the index or key of the
+            `meta` item in question. To access trace `meta` in
+            layout attributes, use `%{data[n[.meta[i]}` where `i`
+            is the index or key of the `meta` and `n` is the trace
+            index.
+        metasrc
+            Sets the source reference on Chart Studio Cloud for
+            `meta`.
+        name
+            Sets the trace name. The trace name appears as the
+            legend item and on hover.
+        opacity
+            Sets the opacity of the trace.
+        outsidetextfont
+            Sets the font used for `textinfo` lying outside the
+            sector.
+        pull
+            Sets the fraction of larger radius to pull the sectors
+            out from the center. This can be a constant to pull all
+            slices apart from each other equally or an array to
+            highlight one or more slices.
+        pullsrc
+            Sets the source reference on Chart Studio Cloud for
+            `pull`.
+        rotation
+            Instead of the first slice starting at 12 o'clock,
+            rotate to some other angle.
+        scalegroup
+            If there are multiple pie charts that should be sized
+            according to their totals, link them by providing a
+            non-empty group id here shared by every trace in the
+            same group.
+        showlegend
+            Determines whether or not an item corresponding to this
+            trace is shown in the legend.
+        sort
+            Determines whether or not the sectors are reordered
+            from largest to smallest.
+        stream
+            :class:`plotly.graph_objects.pie.Stream` instance or
+            dict with compatible properties
+        text
+            Sets text elements associated with each sector. If
+            trace `textinfo` contains a "text" flag, these elements
+            will be seen on the chart. If trace `hoverinfo`
+            contains a "text" flag and "hovertext" is not set,
+            these elements will be seen in the hover labels.
+        textfont
+            Sets the font used for `textinfo`.
+        textinfo
+            Determines which trace information appear on the graph.
+        textposition
+            Specifies the location of the `textinfo`.
+        textpositionsrc
+            Sets the source reference on Chart Studio Cloud for
+            `textposition`.
+        textsrc
+            Sets the source reference on Chart Studio Cloud for
+            `text`.
+        texttemplate
+            Template string used for rendering the information text
+            that appear on points. Note that this will override
+            `textinfo`. Variables are inserted using %{variable},
+            for example "y: %{y}". Numbers are formatted using
+            d3-format's syntax %{variable:d3-format}, for example
+            "Price: %{y:$.2f}".
+            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
+            for details on the formatting syntax. Dates are
+            formatted using d3-time-format's syntax
+            %{variable|d3-time-format}, for example "Day:
+            %{2019-01-01|%A}". https://github.com/d3/d3-time-
+            format/tree/v2.2.3#locale_format for details on the
+            date formatting syntax. Every attributes that can be
+            specified per-point (the ones that are `arrayOk: true`)
+            are available. Finally, the template string has access
+            to variables `label`, `color`, `value`, `percent` and
+            `text`.
+        texttemplatesrc
+            Sets the source reference on Chart Studio Cloud for
+            `texttemplate`.
+        title
+            :class:`plotly.graph_objects.pie.Title` instance or
+            dict with compatible properties
+        uid
+            Assign an id to this trace, Use this to provide object
+            constancy between traces during animations and
+            transitions.
+        uirevision
+            Controls persistence of some user-driven changes to the
+            trace: `constraintrange` in `parcoords` traces, as well
+            as some `editable: true` modifications such as `name`
+            and `colorbar.title`. Defaults to `layout.uirevision`.
+            Note that other user-driven trace attribute changes are
+            controlled by `layout` attributes: `trace.visible` is
+            controlled by `layout.legend.uirevision`,
+            `selectedpoints` is controlled by
+            `layout.selectionrevision`, and `colorbar.(x|y)`
+            (accessible with `config: {editable: true}`) is
+            controlled by `layout.editrevision`. Trace changes are
+            tracked by `uid`, which only falls back on trace index
+            if no `uid` is provided. So if your app can add/remove
+            traces before the end of the `data` array, such that
+            the same trace has a different index, you can still
+            preserve user-driven changes if you give each trace a
+            `uid` that stays with it as it moves.
+        values
+            Sets the values of the sectors. If omitted, we count
+            occurrences of each label.
+        valuessrc
+            Sets the source reference on Chart Studio Cloud for
+            `values`.
+        visible
+            Determines whether or not this trace is visible. If
+            "legendonly", the trace is not drawn, but can appear as
+            a legend item (provided that the legend itself is
+            visible).
+        
+Did you mean "hole"?
+
+Bad property path:
+colors
+^^^^^^

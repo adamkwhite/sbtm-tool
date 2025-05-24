@@ -1,0 +1,11 @@
+nicegui==1.4.21
+sqlalchemy
+alembic
+python-multipart
+python-dateutil
+markdown
+pillow
+aiofiles
+plotly
+psycopg2-binary
+gunicorn

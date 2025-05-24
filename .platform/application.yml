@@ -1,0 +1,8 @@
+# AWS Elastic Beanstalk configuration
+option_settings:
+  aws:elasticbeanstalk:application:environment:
+    ENVIRONMENT: production
+    HOST: 0.0.0.0
+    PORT: 8000
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: main.py
