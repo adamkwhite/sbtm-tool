@@ -1,0 +1,20 @@
+{
+    "servers": {
+       "taskmaster-ai": {
+    "type": "stdio",
+    "command": "/home/adam/.npm-global/bin/task-master-ai",
+    "args": [],
+    "env": {
+        "ANTHROPIC_API_KEY": "${input:anthropic_api_key}"
+    }
+}
+    },
+    "inputs": [
+        {
+            "id": "anthropic_api_key",
+            "type": "promptString",
+            "description": "Enter your Anthropic API Key",
+            "password": true
+        }
+    ]
+}
