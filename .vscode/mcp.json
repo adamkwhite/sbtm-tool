@@ -1,0 +1,20 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "anthropic-api-key",
+      "description": "Anthropic API Key for Claude",
+      "password": true
+    }
+  ],
+  "servers": {
+    "taskmaster-ai": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "--package=task-master-ai", "task-master-ai"],
+      "env": {
+        "ANTHROPIC_API_KEY": "${input:anthropic-api-key}"
+      }
+    }
+  }
+}

@@ -42,7 +42,38 @@ def create_session_view():
     
     def save_session():
         """Save the current session to database"""
-        ui.notify('Session saved successfully!', type='positive')
+        try:
+            # Validate TBS metrics first
+            if not validate_tbs(t_metric, b_metric, s_metric):
+                return
+            
+            # Get database session
+            db = next(get_db())
+            
+            # Create new session object
+            new_session = Session(
+                project_id=1,  # Default project for now
+                local_charter=local_charter.value,
+                t_metric=t_metric.value,
+                b_metric=b_metric.value,
+                s_metric=s_metric.value,
+                start_time=datetime.strptime(start_time.value, '%Y-%m-%d %H:%M') if start_time.value else None,
+                duration=duration.value,
+                status=status.value,
+                notes=notes.value
+            )
+            
+            # Save to database
+            db.add(new_session)
+            db.commit()
+            db.refresh(new_session)
+            
+            ui.notify(f'Session saved successfully! ID: {new_session.id}', type='positive')
+            
+        except Exception as e:
+            ui.notify(f'Error saving session: {str(e)}', type='negative')
+        finally:
+            db.close()
     
     def save_as_template():
         """Save current session as a template"""

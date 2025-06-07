@@ -229,7 +229,7 @@ class Tag(Base):
     testers = relationship("Tester", secondary=tester_tags, back_populates="tags")
     products = relationship("Product", secondary=product_tags, back_populates="tags")
     environments = relationship("TestEnvironment", secondary=environment_tags, back_populates="tags")
-    documents = relationship("Document", secondary=document_tags, back_populates="documents")
+    documents = relationship("Document", secondary=document_tags, back_populates="tags")
 
 class Document(Base):
     __tablename__ = 'documents'
