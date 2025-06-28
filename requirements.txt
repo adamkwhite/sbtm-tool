@@ -1,4 +1,4 @@
-nicegui==1.4.21
+nicegui==1.4.37
 sqlalchemy
 alembic
 python-multipart
